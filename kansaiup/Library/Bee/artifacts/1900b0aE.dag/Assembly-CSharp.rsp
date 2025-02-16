@@ -364,7 +364,9 @@
 "Assets/Jammo-Character/Scripts/MovementInput.cs"
 "Assets/Scripts/CheckPoint.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/JumpAbsolute.cs"
 "Assets/Scripts/Player.cs"
+"Assets/Scripts/Rotation.cs"
 "Assets/Scripts/SceneChanger.cs"
 -langversion:9.0
 /deterministic
