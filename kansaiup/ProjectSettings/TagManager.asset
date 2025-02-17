@@ -7,6 +7,8 @@ TagManager:
   - PlayerEyes
   - Ground
   - GM
+  - Floor
+  - Ice
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     private bool isJump = true;
     private bool isMove = true; 
+    private bool isIce = false;
 
     void Awake()
     {
@@ -45,7 +46,16 @@ public class Player : MonoBehaviour
         var rotationSpeed = 600 * Time.deltaTime;
 
         //移動
-        transform.position += velocity * moveSpeed * Time.deltaTime;
+        if(isIce == true)
+        {
+            rb.AddForce(new Vector3(horizontal, 0, vertical) * 5);
+        }else if(isIce == false)
+        {
+            transform.position += velocity * moveSpeed * Time.deltaTime;
+        }
+        Debug.Log(isIce);
+
+        
 
         
         //移動方向を向く
@@ -73,7 +83,7 @@ public class Player : MonoBehaviour
         //地面とに当たり判定をレイキャストで行う
         Vector3 rayOrigin = transform.position + Vector3.up * 0.2f; // 少し上から Ray を飛ばす
         isJump = Physics.Raycast(rayOrigin, Vector3.down, checkDistance, groundLayer);
-        Debug.Log(isJump);
+        //Debug.Log(isJump);
 
         //ジャンプ
         if(isJump == true && Input.GetKeyDown(KeyCode.Space))
@@ -91,6 +101,22 @@ public class Player : MonoBehaviour
         if(other.gameObject.CompareTag("Ground"))
         {
             animator.SetBool("Isjump", true);
+            Debug.Log("manko");
+        }
+        
+        else if(other.gameObject.CompareTag("Ice"))
+        {
+            animator.SetBool("Isjump", true);
+            isIce = true;
+            Debug.Log("tinko");
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Ice"))
+        {
+            isIce = false;
         }
     }
 

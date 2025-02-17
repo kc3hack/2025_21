@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\Rotation.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Jammo-Character\Scripts\CharacterSkinController.cs" />
   </ItemGroup>
   <ItemGroup>
