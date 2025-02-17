@@ -41,6 +41,13 @@ public class Player : MonoBehaviour
         var horizontalRotation = Quaternion.AngleAxis(Camera.main.transform.eulerAngles.y, Vector3.up);
         var velocity = horizontalRotation * new Vector3(horizontal,0,vertical).normalized;
 
+        // カメラの向きを基準にした移動方向の計算
+        Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
+        Vector3 cameraRight = Camera.main.transform.right;
+
+        Vector3 moveDirection = cameraForward * vertical + cameraRight * horizontal;
+        moveDirection = moveDirection.normalized; // 正規化して移動方向を統一
+
         //速度の取得
         var speed = Input.GetKey(KeyCode.LeftShift) ? 2: 1;
         var rotationSpeed = 600 * Time.deltaTime;
@@ -48,15 +55,12 @@ public class Player : MonoBehaviour
         //移動
         if(isIce == true)
         {
-            rb.AddForce(new Vector3(horizontal, 0, vertical) * 5);
+            //rb.AddForce(new Vector3(horizontal, 0, vertical) * 1);
+            rb.AddForce(moveDirection * moveSpeed * 0.1f, ForceMode.Force);
         }else if(isIce == false)
         {
             transform.position += velocity * moveSpeed * Time.deltaTime;
         }
-        Debug.Log(isIce);
-
-        
-
         
         //移動方向を向く
         if(velocity.magnitude > 0.5f)
