@@ -34,7 +34,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         if(isMove == true){
-        
         //入力ベクトルの取得
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
@@ -48,6 +47,7 @@ public class Player : MonoBehaviour
         //移動
         transform.position += velocity * moveSpeed * Time.deltaTime;
 
+        
         //移動方向を向く
         if(velocity.magnitude > 0.5f)
         {
