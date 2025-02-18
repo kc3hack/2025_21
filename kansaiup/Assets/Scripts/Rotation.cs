@@ -8,15 +8,6 @@ public class VerticalRotation : MonoBehaviour
     [SerializeField] private float rotate_x;
     [SerializeField] private float rotate_y;
     [SerializeField] private float rotate_z;
-    
-    
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
