@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float checkDistance = 0.3f;
 
     private bool isJump = true;
-    private bool isMove = true; 
+    private bool isIce = false;
 
     void Awake()
     {
@@ -33,8 +33,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isMove == true){
-        
         //入力ベクトルの取得
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
@@ -46,8 +44,20 @@ public class Player : MonoBehaviour
         var rotationSpeed = 600 * Time.deltaTime;
 
         //移動
-        transform.position += velocity * moveSpeed * Time.deltaTime;
+        if(isIce == true)
+        {
+            // カメラの向きを基準にした移動方向の計算
+            Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
+            Vector3 cameraRight = Camera.main.transform.right;
+            Vector3 moveDirection = cameraForward * vertical + cameraRight * horizontal;
 
+            moveDirection = moveDirection.normalized; // 正規化して移動方向を統一
+            rb.AddForce(moveDirection * moveSpeed * 0.1f, ForceMode.Force);
+        }else if(isIce == false)
+        {
+            transform.position += velocity * moveSpeed * Time.deltaTime;
+        }
+        
         //移動方向を向く
         if(velocity.magnitude > 0.5f)
         {
@@ -60,23 +70,13 @@ public class Player : MonoBehaviour
         //移動速度をAnimatorに反映
         animator.SetFloat("Speed", velocity.magnitude * speed, 0.1f, Time.deltaTime);
 
-        }
 
-        //着地時にプレイヤーが動けないようにする
-        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Jump3"))
-        {
-            isMove = false;
-        }else{
-            isMove = true;
-        }
-
-        //地面とに当たり判定をレイキャストで行う
+        //地面との当たり判定をレイキャストで行う
         Vector3 rayOrigin = transform.position + Vector3.up * 0.2f; // 少し上から Ray を飛ばす
         isJump = Physics.Raycast(rayOrigin, Vector3.down, checkDistance, groundLayer);
-        Debug.Log(isJump);
 
         //ジャンプ
-        if(isJump == true && Input.GetKeyDown(KeyCode.Space))
+        if(isJump == true && Input.GetKeyDown(KeyCode.Space) && !animator.GetCurrentAnimatorStateInfo(0).IsName("mixamo_com"))
         {
             Jump(jumpPower);
         }
@@ -88,9 +88,18 @@ public class Player : MonoBehaviour
 
 
     private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.CompareTag("Ground"))
+        
+        if(other.gameObject.CompareTag("Ice"))
         {
-            animator.SetBool("Isjump", true);
+            isIce = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Ice"))
+        {
+            isIce = false;
         }
     }
 
@@ -106,7 +115,6 @@ public class Player : MonoBehaviour
 
     public void Jump(float jumpPower)
     {
-        animator.SetBool("Isjump", false);
         rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
         animator.SetTrigger("Jump");
     }
