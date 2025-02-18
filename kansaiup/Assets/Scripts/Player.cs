@@ -123,6 +123,7 @@ public class Player : MonoBehaviour
     {
         if(transform.position.y <= 1)
         {
+            rb.velocity = new Vector3(0, 0, 0);
             transform.position = GM.CheckPointPos;
         }
     }

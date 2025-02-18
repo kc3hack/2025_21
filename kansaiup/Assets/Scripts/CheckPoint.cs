@@ -22,7 +22,7 @@ public class CheckPoint : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             GM.CheckPointPos = transform.position;
-            //Debug.Log(GM.CheckPointPos);
+            Debug.Log(GM.CheckPointPos);
         }
     }
 }
