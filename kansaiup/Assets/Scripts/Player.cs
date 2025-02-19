@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         }
 
         //リスポーン
-        if(transform.position.y <= 1)
+        if(transform.position.y <= -100)
         {
             Deth();
         }

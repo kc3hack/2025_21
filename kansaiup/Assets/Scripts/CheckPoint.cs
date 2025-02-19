@@ -27,8 +27,8 @@ public class CheckPoint : MonoBehaviour
         {
             GM.CheckPointPos = transform.position;
             Debug.Log(GM.CheckPointPos);
-            testChat.MessageSubmit(chat);
-            StartCoroutine(TextReset());
+            //testChat.MessageSubmit(chat);
+            //StartCoroutine(TextReset());
         }
     }
 
