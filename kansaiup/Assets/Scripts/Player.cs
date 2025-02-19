@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 using UnityEngine;
+using Photon.Pun;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviourPunCallbacks
 {
     Rigidbody rb;
     Animator animator;
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(photonView.IsMine){
         //入力ベクトルの取得
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
@@ -82,9 +84,12 @@ public class Player : MonoBehaviour
         }
 
         //リスポーン
+        /*
         if(transform.position.y <= 1)
         {
             Deth();
+        }
+        */
         }
 
     }
