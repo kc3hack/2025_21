@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
             Vector3 moveDirection = cameraForward * vertical + cameraRight * horizontal;
 
             moveDirection = moveDirection.normalized; // 正規化して移動方向を統一
-            rb.AddForce(moveDirection * moveSpeed * 0.1f, ForceMode.Force);
+            rb.AddForce(moveDirection * moveSpeed, ForceMode.Force);
         }else if(isIce == false)
         {
             transform.position += velocity * moveSpeed * Time.deltaTime;
@@ -82,7 +82,10 @@ public class Player : MonoBehaviour
         }
 
         //リスポーン
-        Deth();
+        if(transform.position.y <= 1)
+        {
+            Deth();
+        }
 
     }
 
@@ -121,11 +124,8 @@ public class Player : MonoBehaviour
 
     public void Deth()
     {
-        if(transform.position.y <= 1)
-        {
             rb.velocity = new Vector3(0, 0, 0);
             transform.position = GM.CheckPointPos;
-        }
     }
 
     }
