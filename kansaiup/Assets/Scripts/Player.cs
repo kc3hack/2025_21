@@ -104,8 +104,18 @@ public class Player : MonoBehaviourPunCallbacks
 
 
         //地面との当たり判定をレイキャストで行う
-        Vector3 rayOrigin = transform.position + Vector3.up * 0.2f; // 少し上から Ray を飛ばす
-        isJump = Physics.Raycast(rayOrigin, Vector3.down, checkDistance, groundLayer);
+        //Vector3 rayOrigin = transform.position + Vector3.up * 0.2f; // 少し上から Ray を飛ばす
+        //isJump = Physics.Raycast(rayOrigin, Vector3.down, checkDistance, groundLayer);
+
+        float sphereRadius = 0.5f;
+        Vector3 sphereCenter = transform.position + Vector3.down * 0.1f; // 足元あたりの中心
+
+        Collider[] colliders = Physics.OverlapSphere(sphereCenter, sphereRadius, groundLayer);
+        isJump = colliders.Length > 0;
+
+        // 可視化（Sceneビュー用）
+        Color gizmoColor = isJump ? Color.green : Color.red;
+        Debug.DrawRay(sphereCenter, Vector3.down * checkDistance, gizmoColor);
 
         //ジャンプ
         if(isJump == true && Input.GetKeyDown(KeyCode.Space) && !animator.GetCurrentAnimatorStateInfo(0).IsName("mixamo_com"))
@@ -139,13 +149,14 @@ public class Player : MonoBehaviourPunCallbacks
         }
     }
 
-
+/*
     private void OnDrawGizmos()
     {
         // シーンビューで Ray を可視化
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * checkDistance);
     }
+*/
 
     
 

@@ -2336,7 +2336,7 @@ Transform:
   m_GameObject: {fileID: 3285405086358126311}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 18, z: -417}
+  m_LocalPosition: {x: 1.1418667, y: 19.09, z: -416.8858}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2431,9 +2431,11 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  moveSpeed: 6
-  jumpPower: 10
+  moveSpeed: 1
+  moveIceSpeed: 3
+  jumpPower: 15
   checkDistance: 0.3
+  airControlMultiplier: 1
   virtualCamera: {fileID: 5903409103707251217, guid: 97eb3557ad9b96943a8b72943c76e41d, type: 3}
 --- !u!65 &887094249308489167
 BoxCollider:
