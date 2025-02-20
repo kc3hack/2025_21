@@ -40,6 +40,18 @@ public class Player : MonoBehaviourPunCallbacks
             virtualCamera.Follow = transform;
             virtualCamera.LookAt = transform;
 
+            //Aim設定
+            var pov = virtualCamera.GetCinemachineComponent<CinemachinePOV>();
+            if(AimSetting.xValue == 0 && AimSetting.yValue == 0)
+            {
+                pov.m_HorizontalAxis.m_MaxSpeed = 2.0f;
+                pov.m_VerticalAxis.m_MaxSpeed = 1.0f;
+            }else{
+                pov.m_HorizontalAxis.m_MaxSpeed = AimSetting.xValue * 2;
+                pov.m_VerticalAxis.m_MaxSpeed = AimSetting.yValue * 2;
+            }
+
+            
         rb = GetComponent<Rigidbody>();
         GM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
     }
