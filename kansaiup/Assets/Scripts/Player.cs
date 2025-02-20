@@ -47,12 +47,13 @@ public class Player : MonoBehaviour
         if(isIce == true)
         {
             // カメラの向きを基準にした移動方向の計算
+            Debug.Log("d");
             Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
             Vector3 cameraRight = Camera.main.transform.right;
             Vector3 moveDirection = cameraForward * vertical + cameraRight * horizontal;
 
             moveDirection = moveDirection.normalized; // 正規化して移動方向を統一
-            rb.AddForce(moveDirection * moveSpeed, ForceMode.Force);
+            rb.AddForce(moveDirection * moveSpeed * 0.3f, ForceMode.Force);
         }else if(isIce == false)
         {
             transform.position += velocity * moveSpeed * Time.deltaTime;
