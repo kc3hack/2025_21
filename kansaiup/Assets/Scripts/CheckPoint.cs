@@ -16,10 +16,6 @@ public class CheckPoint : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -27,8 +23,8 @@ public class CheckPoint : MonoBehaviour
         {
             GM.CheckPointPos = transform.position;
             Debug.Log(GM.CheckPointPos);
-            //testChat.MessageSubmit(chat);
-            //StartCoroutine(TextReset());
+            testChat.MessageSubmit(chat);
+            StartCoroutine(TextReset());
         }
     }
 

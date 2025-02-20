@@ -71,7 +71,7 @@ public class TestChat : MonoBehaviour
         chatText = inputf.GetComponent<Text>();
         communicationHistory.Add(assistantModel);
         //MessageSubmit("はじめまして");
-        MessageSubmit("今からゲームを始めます");
+        //MessageSubmit("今からゲームを始めます");
     }
 
     private void Communication(string newMessage, Action<MessageModel> result)

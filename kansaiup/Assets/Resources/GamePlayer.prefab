@@ -2436,7 +2436,7 @@ MonoBehaviour:
   jumpPower: 15
   checkDistance: 0.3
   airControlMultiplier: 1
-  virtualCamera: {fileID: 5903409103707251217, guid: 97eb3557ad9b96943a8b72943c76e41d, type: 3}
+  virtualCamera: {fileID: 0}
 --- !u!65 &887094249308489167
 BoxCollider:
   m_ObjectHideFlags: 0
