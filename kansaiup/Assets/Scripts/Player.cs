@@ -14,8 +14,10 @@ public class Player : MonoBehaviourPunCallbacks
     GameManager GM;
     public LayerMask groundLayer;
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveIceSpeed = 3f;
     [SerializeField] private float jumpPower = 10f;
     [SerializeField] private float checkDistance = 0.3f;
+    [SerializeField] private float airControlMultiplier; // 空中移動の制限
 
     private bool isJump = true;
     private bool isIce = false;
@@ -61,16 +63,31 @@ public class Player : MonoBehaviourPunCallbacks
         if(isIce == true)
         {
             // カメラの向きを基準にした移動方向の計算
-            Debug.Log("d");
             Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
             Vector3 cameraRight = Camera.main.transform.right;
-            Vector3 moveDirection = cameraForward * vertical + cameraRight * horizontal;
 
+            Vector3 moveDirection = cameraForward * vertical + cameraRight * horizontal;
             moveDirection = moveDirection.normalized; // 正規化して移動方向を統一
-            rb.AddForce(moveDirection * moveSpeed * 0.3f, ForceMode.Force);
+            rb.AddForce(moveDirection * moveIceSpeed, ForceMode.Force);
         }else if(isIce == false)
         {
-            transform.position += velocity * moveSpeed * Time.deltaTime;
+            //transform.position += velocity * moveSpeed * Time.deltaTime;
+            Vector3 cameraForward = Camera.main.transform.forward;
+            cameraForward.y = 0;
+            cameraForward = cameraForward.normalized;
+
+            Vector3 cameraRight = Camera.main.transform.right;
+            cameraRight.y = 0;
+            cameraRight = cameraRight.normalized;
+
+            Vector3 moveDirection = cameraForward * vertical + cameraRight * horizontal;
+            moveDirection = moveDirection.normalized * 10;
+
+                // 地上と空中で移動速度を分ける
+            float currentMoveSpeed = isJump ? moveSpeed : moveSpeed * airControlMultiplier;
+
+            // 現在のy軸の速度を保持
+            rb.velocity = new Vector3(moveDirection.x * currentMoveSpeed, rb.velocity.y, moveDirection.z * currentMoveSpeed);
         }
         
         //移動方向を向く

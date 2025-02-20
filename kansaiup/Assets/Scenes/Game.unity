@@ -21213,15 +21213,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2000516721969319156, guid: 5c56f18bc1ad9924399fa89972d401c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -15.02
       objectReference: {fileID: 0}
     - target: {fileID: 2000516721969319156, guid: 5c56f18bc1ad9924399fa89972d401c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18
+      value: 67.82
       objectReference: {fileID: 0}
     - target: {fileID: 2000516721969319156, guid: 5c56f18bc1ad9924399fa89972d401c3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -417
+      value: -249.89
       objectReference: {fileID: 0}
     - target: {fileID: 2000516721969319156, guid: 5c56f18bc1ad9924399fa89972d401c3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21254,6 +21254,22 @@ PrefabInstance:
     - target: {fileID: 3285405086358126311, guid: 5c56f18bc1ad9924399fa89972d401c3, type: 3}
       propertyPath: m_Name
       value: GamePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 9158499996032675346, guid: 5c56f18bc1ad9924399fa89972d401c3, type: 3}
+      propertyPath: jumpPower
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9158499996032675346, guid: 5c56f18bc1ad9924399fa89972d401c3, type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9158499996032675346, guid: 5c56f18bc1ad9924399fa89972d401c3, type: 3}
+      propertyPath: moveIceSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9158499996032675346, guid: 5c56f18bc1ad9924399fa89972d401c3, type: 3}
+      propertyPath: airControlMultiplier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25682,7 +25698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotate_x: 0
-  rotate_y: 0
+  rotate_y: 0.5
   rotate_z: 0
 --- !u!1 &1141272226 stripped
 GameObject:
@@ -41306,6 +41322,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 16212d6dd829e6747b02d2d7d8d8ae73, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 16212d6dd829e6747b02d2d7d8d8ae73, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
