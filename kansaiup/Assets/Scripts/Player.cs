@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
+using Photon.Pun;
 using UnityEngine;
+using Cinemachine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviourPunCallbacks
 {
     Rigidbody rb;
     Animator animator;
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
 
     private bool isJump = true;
     private bool isIce = false;
+    public CinemachineVirtualCamera virtualCamera;
 
     void Awake()
     {
@@ -26,13 +29,24 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
+        if (photonView.IsMine) // 所有者プレイヤーのみがカメラを操作
+        {
+            // Virtual Cameraを取得
+            virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
+            
+            // プレイヤーのTransformをFollowとLookAtに設定
+            virtualCamera.Follow = transform;
+            virtualCamera.LookAt = transform;
+
         rb = GetComponent<Rigidbody>();
         GM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+    }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(photonView.IsMine){
         //入力ベクトルの取得
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
@@ -87,6 +101,7 @@ public class Player : MonoBehaviour
         {
             Deth();
         }
+    }
 
     }
 
