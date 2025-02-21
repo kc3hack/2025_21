@@ -176,6 +176,8 @@ public class Player : MonoBehaviourPunCallbacks
     {
         rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
         animator.SetTrigger("Jump");
+        FindObjectOfType<JumpMusic>().PlayJumpSound();
+        FindObjectOfType<JumpDust>().PlayDustEffect();
     }
 
     public void Deth()
