@@ -23,4 +23,14 @@ public class SampleScene : MonoBehaviourPunCallbacks
         //var position = new Vector3(-2,18,-415);
         PhotonNetwork.Instantiate("GamePlayer", position, Quaternion.identity);
     }
+
+    // 退出ボタンが押された時に呼ばれる
+public void ExitGameRoom()
+{
+    PhotonNetwork.LeaveRoom();
+    PhotonNetwork.Disconnect();
+    
+    // タイトルシーンを読み込む
+    PhotonNetwork.LoadLevel("Title");
+}
 }
