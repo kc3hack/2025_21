@@ -136,7 +136,7 @@ public class Player : MonoBehaviourPunCallbacks
         }
 
         //リスポーン
-        if(transform.position.y <= -100)
+        if(transform.position.y <= -50)
         {
             Deth();
         }

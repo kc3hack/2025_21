@@ -10,15 +10,9 @@ public class Ball : MonoBehaviour
         StartCoroutine(disappearance());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator disappearance()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
         Destroy(gameObject);
     }
 }

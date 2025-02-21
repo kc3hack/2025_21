@@ -6,7 +6,7 @@ public class tama : MonoBehaviour
     public GameObject ballPrefab; // 発射する球のプレハブ
     public Transform spawnPoint; // 発射位置
     public float spawnInterval = 3f; // 発射間隔
-    public float launchForce = 10f; // 発射力
+    public float launchForce = 100f; // 発射力
     private float newX;
 
     private void Start()
@@ -27,8 +27,8 @@ public class tama : MonoBehaviour
     {
         if (ballPrefab == null || spawnPoint == null) return;
 
-        launchForce = Randommethod(20,30);
-        newX = Randommethod(-10,10);
+        launchForce = Randommethod(10f,100f);
+        newX = Randommethod(0.00185f,0.000206f);
         spawnPoint.position = new Vector3(newX, spawnPoint.position.y, spawnPoint.position.z);
         Debug.Log(spawnPoint);
 
@@ -44,9 +44,9 @@ public class tama : MonoBehaviour
         }
     }
     
-    private int Randommethod(int min, int max)
+    private float Randommethod(float min, float max)
     {
-        int random = Random.Range(min,max);
+        float random = Random.Range(min,max);
         return random;
     }
 }
