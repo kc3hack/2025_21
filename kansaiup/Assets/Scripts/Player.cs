@@ -5,6 +5,7 @@ using JetBrains.Annotations;
 using Photon.Pun;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviourPunCallbacks
 {
@@ -22,6 +23,7 @@ public class Player : MonoBehaviourPunCallbacks
     private bool isJump = true;
     private bool isIce = false;
     public CinemachineVirtualCamera virtualCamera;
+    private Button yourButton; // ボタンの参照
 
     void Awake()
     {
@@ -54,6 +56,8 @@ public class Player : MonoBehaviourPunCallbacks
             
         rb = GetComponent<Rigidbody>();
         GM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        yourButton = GameObject.Find("RespornButton").GetComponent<Button>();
+        yourButton.onClick.AddListener(Deth);
     }
     }
 
@@ -174,10 +178,12 @@ public class Player : MonoBehaviourPunCallbacks
 
     public void Jump(float jumpPower)
     {
+        if(photonView.IsMine){
         rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
         animator.SetTrigger("Jump");
         FindObjectOfType<JumpMusic>().PlayJumpSound();
         FindObjectOfType<JumpDust>().PlayDustEffect();
+        }
     }
 
     public void Deth()

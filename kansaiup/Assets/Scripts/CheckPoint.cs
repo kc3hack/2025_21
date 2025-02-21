@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
-public class CheckPoint : MonoBehaviour
+public class CheckPoint : MonoBehaviourPunCallbacks
 {
     private GameManager GM;
     [SerializeField] private string chat;
@@ -19,7 +20,8 @@ public class CheckPoint : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        PhotonView playerPhotonView = other.GetComponent<PhotonView>(); // スコープ内で変数を定義
+        if(other.gameObject.CompareTag("Player") && playerPhotonView.IsMine)
         {
             GM.CheckPointPos = transform.position;
             Debug.Log(GM.CheckPointPos);
