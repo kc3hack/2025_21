@@ -155,6 +155,11 @@ public class Player : MonoBehaviourPunCallbacks
         {
             isIce = true;
         }
+
+        if(other.gameObject.CompareTag("Takoyaki"))
+        {
+            Deth();
+        }
     }
 
     void OnCollisionExit(Collision collision)

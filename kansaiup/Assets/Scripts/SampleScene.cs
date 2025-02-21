@@ -19,8 +19,8 @@ public class SampleScene : MonoBehaviourPunCallbacks
     // ゲームサーバーへの接続が成功した時に呼ばれるコールバック
     public override void OnJoinedRoom() {
         // ランダムな座標に自身のアバター（ネットワークオブジェクト）を生成する
-        var position = new Vector3(Random.Range(-2f, 2f), Random.Range(18f, 20f),Random.Range(-415f,-417f));
-        //var position = new Vector3(-2,18,-415);
+        //var position = new Vector3(Random.Range(-2f, 2f), Random.Range(18f, 20f),Random.Range(-415f,-417f));
+        var position = new Vector3(0,74,-178);
         PhotonNetwork.Instantiate("GamePlayer", position, Quaternion.identity);
     }
 
