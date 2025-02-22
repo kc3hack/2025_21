@@ -12,7 +12,7 @@ public class Goal : MonoBehaviour
             PhotonNetwork.Disconnect();
             
             // タイトルシーンを読み込む
-            PhotonNetwork.LoadLevel("Title");
+            PhotonNetwork.LoadLevel("Credit");
         }
     }
 

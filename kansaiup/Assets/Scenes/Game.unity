@@ -3373,11 +3373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 738994793635670251, guid: 9de07e9342c685b41af90a8bbe422aa9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -346
+      value: -716
       objectReference: {fileID: 0}
     - target: {fileID: 738994793635670251, guid: 9de07e9342c685b41af90a8bbe422aa9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 225
+      value: 485
       objectReference: {fileID: 0}
     - target: {fileID: 738994793635670251, guid: 9de07e9342c685b41af90a8bbe422aa9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -150245,11 +150245,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2177109920387564518, guid: e457c2c697962634386b2bad9b704081, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -490
+      value: -860
       objectReference: {fileID: 0}
     - target: {fileID: 2177109920387564518, guid: e457c2c697962634386b2bad9b704081, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 225
+      value: 485
       objectReference: {fileID: 0}
     - target: {fileID: 2177109920387564518, guid: e457c2c697962634386b2bad9b704081, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -165603,7 +165603,5 @@ SceneRoots:
   - {fileID: 846383724}
   - {fileID: 1693122706}
   - {fileID: 1677702334}
-  - {fileID: 366033844}
-  - {fileID: 1203218818}
   - {fileID: 1171395947}
   - {fileID: 790784127}
