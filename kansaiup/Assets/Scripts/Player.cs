@@ -24,6 +24,7 @@ public class Player : MonoBehaviourPunCallbacks
     private bool isIce = false;
     public CinemachineVirtualCamera virtualCamera;
     private Button yourButton; // ボタンの参照
+    private bool isJumping = false;
 
     void Awake()
     {
@@ -160,6 +161,11 @@ public class Player : MonoBehaviourPunCallbacks
         {
             Deth();
         }
+
+        if(other.gameObject.CompareTag("Ground"))
+        {
+            //animator.SetBool
+        }
     }
 
     void OnCollisionExit(Collision collision)
@@ -184,10 +190,15 @@ public class Player : MonoBehaviourPunCallbacks
     public void Jump(float jumpPower)
     {
         if(photonView.IsMine){
+        isJumping = true;
+        photonView.RPC(nameof(SetJumpAnimation), RpcTarget.All, isJumping);
         rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
-        animator.SetTrigger("Jump");
+        //animator.SetTrigger("Jump");
         FindObjectOfType<JumpMusic>().PlayJumpSound();
         FindObjectOfType<JumpDust>().PlayDustEffect();
+
+        // 次のフレームでFalseに戻す (Triggerのような動き)
+        StartCoroutine(ResetJumpBool());
         }
     }
 
@@ -196,5 +207,20 @@ public class Player : MonoBehaviourPunCallbacks
             rb.velocity = new Vector3(0, 0, 0);
             transform.position = GM.CheckPointPos;
     }
+
+        private IEnumerator ResetJumpBool()
+    {
+        yield return null; // 次のフレームまで待つ
+        isJumping = false;
+        photonView.RPC(nameof(SetJumpAnimation), RpcTarget.All, isJumping);
+    }
+
+    [PunRPC]
+    private void SetJumpAnimation(bool value)
+    {
+        animator.SetBool("isJump", value);
+    }
+
+    
 
     }
