@@ -123,6 +123,134 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &42128093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 42128095}
+  - component: {fileID: 42128094}
+  m_Layer: 0
+  m_Name: BGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &42128094
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42128093}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 30d27f81ce898bf46aa23e523f0a5f30, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &42128095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42128093}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 682.29285, y: 299.22607, z: 481.93445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &122578447
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +278,7 @@ RectTransform:
   m_GameObject: {fileID: 122578447}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.234274, y: 1.234274, z: 1.234274}
+  m_LocalScale: {x: 1.6051735, y: 1.6058154, z: 1.6051735}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 360941226}
@@ -392,7 +520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1564, y: 359}
+  m_AnchoredPosition: {x: -1564, y: 89}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &360941227
@@ -1524,7 +1652,7 @@ MonoBehaviour:
   m_text: "\u88FD\u4F5C / \u5236\u4F5C\u30BD\u30D5\u30C8\u3000\nUnity\nBlender\r\n\r\n\u4F7F\u7528\u30A2\u30BB\u30C3\u30C8\nJammo
     Character | Mix and Jam\r\nSkybox Series Free\nEnvironment Track Lowpoly: Cartoon
     Props Mobile Free\n\r\n\u4F7F\u7528\u3057\u305F\u7D20\u6750\u30B5\u30A4\u30C8\u3000\nPLATEAU
-    \u300C\u56FD\u571F\u4EA4\u901A\u7701\u300D https://www.mlit.go.jp/plateau/plateau-view-app/\nTURBOSQUID\n\u52B9\u679C\u97F3\u30E9\u30DC\r\nMusMus\nFC\u97F3\u5DE5\u5834\n\n\n\u4F5C\u6210\u3057\u305F3D\u30E2\u30C7\u30EB"
+    \u300C\u56FD\u571F\u4EA4\u901A\u7701\u300D https://www.mlit.go.jp/plateau/plateau-view-app/\nTURBOSQUID\nhttps://www.turbosquid.com/\n\u52B9\u679C\u97F3\u30E9\u30DC\r\nhttps://soundeffect-lab.info/\n\u30D5\u30EA\u30FCBGM\u30FB\u97F3\u697D\u7D20\u6750MusMus\nhttps://musmus.main.jp\nFC\u97F3\u5DE5\u5834\nhttps://fc.sitefactory.info/\n\n\n\u4F5C\u6210\u3057\u305F3D\u30E2\u30C7\u30EB"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d440272254681494bb8e20351899841a, type: 2}
   m_sharedMaterial: {fileID: -8064179449428714682, guid: d440272254681494bb8e20351899841a, type: 2}
@@ -2165,7 +2293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -381, y: 3512}
+  m_AnchoredPosition: {x: -381, y: 3600}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1823028133
@@ -2198,7 +2326,8 @@ MonoBehaviour:
     \u52C7\u4EC1\r\n\n\u3000\u3000\u3000\u3000\u3000\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3\u3000\u6D45\u5229
     \u512A\u6597\r\n\r\n\u3000\u3000\u3000\u3000\u3000\u3000\u30D1\u30FC\u30C6\u30A3\u30AF\u30EB\u3000\u6D45\u91CE
     \u52C7\u4EC1\r\n\r\n\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u30B5\u30A6\u30F3\u30C9\u3000\u6D45\u91CE
-    \u52C7\u4EC1\r\n\n\u3000\u3000\u3000\u3000\u30AF\u30EC\u30B8\u30C3\u30C8\u30ED\u30FC\u30EB\u3000\u6D45\u5229
+    \u52C7\u4EC1\r\n\n\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000BGM\u3000\u6D45\u5229
+    \u512A\u6597\r\n\n\u3000\u3000\u3000\u3000\u30AF\u30EC\u30B8\u30C3\u30C8\u30ED\u30FC\u30EB\u3000\u6D45\u5229
     \u512A\u6597\r\n\n\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u958B\u767A\u5831\u544A\u66F8\u3000\u4E0A\u7530
     \u76F4\u6A39\r"
   m_isRightToLeft: 0
@@ -2787,3 +2916,4 @@ SceneRoots:
   - {fileID: 1940801823}
   - {fileID: 373947724}
   - {fileID: 1484468892}
+  - {fileID: 42128095}
