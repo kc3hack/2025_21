@@ -12,7 +12,7 @@ public class Ball : MonoBehaviour
 
     IEnumerator disappearance()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(10f);
         Destroy(gameObject);
     }
 }
