@@ -7212,6 +7212,7 @@ GameObject:
   - component: {fileID: 3407894156474012138}
   - component: {fileID: 3534739332048555986}
   - component: {fileID: 2434299888174503691}
+  - component: {fileID: 5357077164552116855}
   m_Layer: 0
   m_Name: GamePlayer
   m_TagString: Player
@@ -7441,7 +7442,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 459a1de1b21550f4086d8c20b9ddd327, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.492
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7538,6 +7539,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dustEffect: {fileID: 1290414019013667178}
+--- !u!114 &5357077164552116855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3285405086358126311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0c59f2e96044749bb35edac38608fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 3534739332048555986}
+  jumpClip: {fileID: 8300000, guid: 6cfd8d47e9b47054488ba8734e14f98f, type: 3}
 --- !u!1 &3288098607294188162
 GameObject:
   m_ObjectHideFlags: 0
