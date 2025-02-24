@@ -29,7 +29,6 @@
 ## 注力したポイント
 
 <!-- 開発したプロダクトの中で、特に注力して作成した箇所・ポイントについて入力してください -->
-### アイデア面
 ![プロダクト名](kansaiup/Assets/demo/3DCG.png)
 ![プロダクト名](kansaiup/Assets/demo/pla.png)
 ![プロダクト名](kansaiup/Assets/demo/photn.png)
