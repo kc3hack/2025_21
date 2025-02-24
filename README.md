@@ -1,7 +1,7 @@
 # KANSAI UP!
 <!-- プロダクト名に変更してください -->
 
-![プロダクト名](https://kc3.me/cms/wp-content/uploads/2024/11/hack25-eyecatch.png)
+![プロダクト名](kansaiup/Assets/2D/Title.png)
 <!-- プロダクト名・イメージ画像を差し変えてください -->
 
 
@@ -22,7 +22,7 @@
 
 
 ## 操作説明・デモ動画
-[デモ動画はこちら](https://www.youtube.com/watch?v=fbzGp0XJGq8)
+[デモ動画はこちら](kansaiup/Assets/demo/KC3demoPV.mp4)
 <!-- 開発したプロダクトの操作説明について入力してください。また、操作説明デモ動画があれば、埋め込みやリンクを記載してください -->
 
 
@@ -30,10 +30,10 @@
 
 <!-- 開発したプロダクトの中で、特に注力して作成した箇所・ポイントについて入力してください -->
 ### アイデア面
-
-### デザイン面
-
-### その他
+![プロダクト名](kansaiup/Assets/demo/3DCG.png)
+![プロダクト名](kansaiup/Assets/demo/pla.png)
+![プロダクト名](kansaiup/Assets/demo/photn.png)
+![プロダクト名](kansaiup/Assets/demo/GPT.png)
 
 ## 使用技術
 Unity(2022.3.25f1)、Blender
